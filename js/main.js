@@ -151,6 +151,36 @@ class EvilCircle extends Shape {
   }
 }
 
+class EvilerCircle extends Ball {
+  constructor(x, y, velX, velY, color, size) {
+    super(x, y, velX, velY, color, size);
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = 3;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+
+  collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false;
+          numBalls--;
+          para.textContent="Ball Count: " + numBalls;
+        }
+      }
+    }
+  }
+}
+
 const balls = [];
 
 while (balls.length < 25) {
@@ -171,6 +201,7 @@ while (balls.length < 25) {
 }
 
 const evil = new EvilCircle(5, 5);
+const eviler = new EvilerCircle(5, 5, random(-7, 7), random(-7, 7), 'rgb(255,0,0)', 10);
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
@@ -179,6 +210,10 @@ function loop() {
   evil.draw();
   evil.checkBounds();
   evil.collisionDetect();
+
+  eviler.draw();
+  eviler.update();
+  eviler.collisionDetect();
 
   for (const ball of balls) {
     if (ball.exists) {
