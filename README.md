@@ -2,23 +2,16 @@
 
 ## Overview
 
-TODO: Write a project description
+This project required us to make a game out of the given source code. There are a bunch of balls bouncing around the screen, and
+we were given the task of implementing a user controllable circle
+that 'eats' up the balls when the circle makes contact with one of them. There is a 'Ball Count' on the right of the screen
+so the player knows how many are left. I've also implemented a 
+second CPU controlled circle that helps the player out.
 
 ## Sources and Credits
 
-TODO: You must credit the sources and authors of any code, libraries, or other
-assets you use in your project. If you leave this section blank, your project
-will be considered in violation of the Academic Honesty policy unless you truly
-created everything from scratch with no outside help. If you need to use a
-source that you cannot credit (e.g. a classmate's work), you must get explicit
-permission from your instructor.
+The only sources I used we're the required reading documents
+as well as the directions given on the assignment page.
 
-A simple bulleted list below is sufficient. For example:
+- Mozilla https://developer.mozilla.org/en-US/
 
-- Bootstrap: https://getbootstrap.com/
-- jQuery: https://jquery.com/
-- Background image: https://unsplash.com/photos/...
-- Sound effects: https://freesound.org/people/...
-- Icons: https://fontawesome.com/
-- Fonts: https://fonts.google.com/
-- etc.
